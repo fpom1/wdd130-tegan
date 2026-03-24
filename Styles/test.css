@@ -1,0 +1,67 @@
+  :root {
+      --cols: 2;
+      --rows: 2;
+      --cell-height: 200px;
+      --gap: 4px;
+      --container-width: 95%;
+  }
+
+
+  /* Main container holding both grids */
+  .container {
+      margin: 50px auto;
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: var(--container-width);
+      border-radius: 10%;
+      padding: 0px var(--side-padding);
+  }
+
+  /*the actual grid of items*/
+  .grid-container1 {
+      display: grid;
+      gap: var(--gap);
+      padding: var(--gap);
+      grid-template-columns: repeat(var(--cols), 1fr);
+  }
+
+  .grid-title-text{
+    text-align: center;
+  }
+  /*the items*/
+  .grid-item {
+      display: flex;
+      flex-direction: column;
+      border: 2px solid #000000;
+      overflow: hidden;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+      cursor: pointer;
+      background: white;
+  }
+
+  /*hover function*/
+  .grid-item:hover {
+      background-color: #FFFFFF;
+      transform: translateY(-1px);
+      transform: scale(1.02);
+      box-shadow: 0 4px 10px #000000;
+  }
+
+  /* Click effect */
+  .grid-item:active {
+      transform: translateY(0);
+      box-shadow: 0 2px 5px #000000;
+  }
+
+  /*style for the image of each item*/
+  .grid-item img {
+      width: 100%;
+      height: var(--cell-height);
+      object-fit: cover;
+
+  }
+

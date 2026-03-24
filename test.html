@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="Styles/test.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="grid-container1" id="grid1"></div>
+    </div>
+
+    <script>
+        //you will have to change these three things if you wish to update
+        //list of the images on the grid
+        const mainImages = [
+            "Images/img1.png",
+            "Images/img2.png",
+            "Images/img3.png",
+            "Images/img4.png",
+        ];
+        //cooresponding titles
+        const mainTitles = [
+            "image1",
+            "image2",
+            "image3",
+            "image4",
+
+        ];
+        const styles = getComputedStyle(document.documentElement);
+        const cols = parseInt(styles.getPropertyValue('--cols'));
+        const rows = parseInt(styles.getPropertyValue('--rows'));
+        function populateGrid(gridId, imagesArray, titlesArray) {
+            const grid = document.getElementById(gridId);
+            grid.innerHTML = "";
+
+            for (let i = 0; i < imagesArray.length; i++) {
+                const cell = document.createElement("div");
+                cell.classList.add("grid-item");
+
+                const title = document.createElement("div");
+                title.classList.add("grid-title-text");
+                title.textContent = titlesArray[i];
+
+                const img = document.createElement("img");
+                img.src = imagesArray[i];
+                img.alt = titlesArray[i];
+
+                cell.appendChild(title);
+                cell.appendChild(img);
+                grid.appendChild(cell);
+            }
+        }
+
+
+        // Populate grid
+        populateGrid("grid1", mainImages.slice(0, cols * rows), mainTitles);
+    </script>
+
+</body>
+
+</html>
