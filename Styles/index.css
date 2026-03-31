@@ -1,3 +1,47 @@
+  :root {
+      --cols: 2;
+      --rows: 2;
+      --cell-height: 200px;
+      --gap: 20px;
+      --container-width: 95%;
+  }
+
+
+  /* Main container holding both grids */
+.container {
+    margin: 10px 0;        /* remove auto centering */
+    width: 90%;           /* full width */
+    padding: 20px;            /* remove side padding limiting width */
+    padding-top: 0px;
+    margin-top: 0px;
+}
+
+  /*the actual grid of items*/
+.grid-container {
+    display: grid;
+    gap: var(--gap);
+    padding: var(--gap);
+    width: 100%;           /* ensure it fills container */
+    grid-template-columns: repeat(var(--cols), 1fr);
+}
+
+  .grid-title-text{
+    text-align: center;
+    font-style:normal;
+    font-size: 200%;
+    border-bottom: 1px solid #AAAAAA;
+  }
+  /*the items*/
+  .grid-item {
+      border: 2px solid #000000;
+      overflow: hidden;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+      background: white;
+      padding: 10px;
+  }
+
+
+
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -58,14 +102,39 @@ a:visited {
     color: #7685BA;
 }
 
-.hero {
-  background: 
-    linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-    url('Images/hero.jpeg') center/cover no-repeat;
+/* Container */
+.image-container {
+  width: 94%;
+  height: 300px;            
+  margin: 30px auto;           
+  position: relative;       
+  overflow: hidden;     
+  border: 1px solid black;    
+}
+
+/* Image */
+.image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;        
+  display: block;
+}
+
+.text {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
   
-  height: 80vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
   color: white;
+  font-size: 2rem;
+  text-align: center;
+
+}
+
+
+h1{
+    border-top: 1px solid #000000;
+    padding-inline: 20px;
+    margin-inline: 20px;
 }

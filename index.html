@@ -7,7 +7,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>title</title>
     <link href="Styles/index.css" rel="stylesheet">
-    <link rel="stylesheet" href="cardtype.html">
 </head>
 
 <body>
@@ -23,13 +22,77 @@
             <button onclick="window.location.href='cardtype.html'">Cards</button>
         </nav>
     </header>
-    <div class="hero">
-        <div class="hero-content">
-            <h1>Your Headline</h1>
-            <p>Your subtext goes here</p>
-            <button>Get Started</button>
-        </div>
+    <div class="image-container">
+        <img src="https://picsum.photos/100" alt="Example">
+        <div class="text">Featured Image</div>
     </div>
+    <h1>
+        Latest Articles
+    </h1>
+
+    <div class="container">
+        <div class="grid-container" id="grid1"></div>
+    </div>
+
+    <h1>
+        Top Decks
+    </h1>
+
+    <div class="container">
+        <div class="grid-container" id="grid2"></div>
+    </div>
+
+    <script>
+        //latest articles
+        const articleTitles = [
+            "Article Title",
+            "Description Text"
+        ];
+        const articleDescription = [
+            "Description Text",
+            "Description Text",
+        ];
+
+        //top decks
+        const deckTitles = [
+            "Deck Name 1",
+            "Deck Name 2",
+            "Deck Name 3",
+            "Deck Name 4",
+        ];
+        const deckDescriptions = [
+            "According to all known laws of aviation, there is no way a bee should be able to fly. Its wings are too small to get its fat little body off the ground. The bee, of course, flies anyway because bees don't care what humans think is impossible. Yellow, black. Yellow, black. Yellow, black. Yellow, black. Ooh, black and yellow! Let's shake it up a little. Barry! Breakfast is ready!",
+            "Deck Info 2",
+            "Deck Info 3",
+            "Deck Info 4",
+        ];
+        function populateGrid(gridId, textArray, titlesArray) {
+            const grid = document.getElementById(gridId);
+            grid.innerHTML = "";
+
+            for (let i = 0; i < textArray.length; i++) {
+                const cell = document.createElement("div");
+                cell.classList.add("grid-item");
+
+                const title = document.createElement("div");
+                title.classList.add("grid-title-text");
+                title.textContent = titlesArray[i];
+
+                const textContent = document.createElement("div");
+                textContent.classList.add("grid-text-content");
+                textContent.textContent = textArray[i];
+
+                cell.appendChild(title);
+                cell.appendChild(textContent);
+                grid.appendChild(cell);
+            }
+        }
+
+
+        // Populate grid
+        populateGrid("grid1", articleDescription.slice(0, 2 * 1), articleTitles);
+        populateGrid("grid2", deckDescriptions.slice(0, 2 * 2), deckTitles);
+    </script>
 
 
     <footer>
