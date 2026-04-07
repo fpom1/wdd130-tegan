@@ -23,8 +23,8 @@
         </nav>
     </header>
     <div class="image-container">
-        <img src="https://picsum.photos/100" alt="Example">
-        <div class="text">Featured Image</div>
+        <img src="Images/hero.jpg" alt="Example">
+        <div class="text"></div>
     </div>
     <h1>
         Latest Articles
@@ -45,26 +45,26 @@
     <script>
         //latest articles
         const articleTitles = [
-            "Article Title",
-            "Description Text"
+            "Preorder Secrets of Strixhaven",
+            "GO THERE AND BACK AGAIN"
         ];
         const articleDescription = [
-            "Description Text",
-            "Description Text",
+            "Head back to school with Secrets of Strixhaven! Hit the books and prepare for the set's release on April 24, 2026.",
+            "Join Bilbo’s adventure of a lifetime with Dwarves to befriend, Trolls to trick, Elves to outwit, and songs to sing. There's gold or dragon’s fire at the end, so enjoy the journey!",
         ];
 
         //top decks
         const deckTitles = [
-            "Deck Name 1",
-            "Deck Name 2",
-            "Deck Name 3",
-            "Deck Name 4",
+            "Giada, Font of Hope Angels",
+            "Nekusar, the Mindrazer",
+            "Sythis, Harvest’s Hand",
+            "Blood Pod",
         ];
         const deckDescriptions = [
-            "According to all known laws of aviation, there is no way a bee should be able to fly. Its wings are too small to get its fat little body off the ground. The bee, of course, flies anyway because bees don't care what humans think is impossible. Yellow, black. Yellow, black. Yellow, black. Yellow, black. Ooh, black and yellow! Let's shake it up a little. Barry! Breakfast is ready!",
-            "Deck Info 2",
-            "Deck Info 3",
-            "Deck Info 4",
+            "I’ll be the first to admit that I’m a sucker for angels. They're one of the few creature types in Magic, including merfolk and elves, with just too much synergy. There are dozens more angels than you need, so you can pick from the cream of the crop of commanders and creatures.",
+            "One of my first 3-color decks ever was Nekusar, the Mindrazer. It’s a powerful wheels-based deck that seeks to resolve its commander and other anti-card draw permanents like Underworld Dreams and Spiteful Visions, and to turn ordinary wheel cards into direct damage powerhouses",
+            "I’m sure you’re no stranger to enchantress decks, but on the off chance that you are, picture this: You’re playing a dozen or so cards per turn, drawing three times as many, and only ending the turn because you’ve taken far longer than you should have. That’s how enchantress decks operate, and Sythis, Harvest's Hand is no different.",
+            "Blood Pod is a 4-color Pod-based deck, and one of the most powerful cEDH builds I’ve managed to pilot; it’s always a major threat in any pod it’s in. It has the perfect mixture of powerful interaction, ways to get ahead, and enough combo potential that I’m always a little bit scared of what it’s going to do next.",
         ];
         function populateGrid(gridId, textArray, titlesArray) {
             const grid = document.getElementById(gridId);
